@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {box-sizing: border-box;}
+
+body {
+  /* background-image: url('bg.png'); */
+  background-color: rgb(232, 229, 229);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+
+
+
+
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap'); */
+
+/* set the background of the page */
+body {
+    height: 950px;
+    background: #24252A;
+}
+
+/* set the background of the outer div */ 
+.gallery {
+    height: 82.5%;
+    width: 86.77%;
+    display: flex;
+    margin: 66px auto 0;
+    
+}
+
+.flip-card {
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    margin: 0.5% 0.5%;
+    flex-basis: 100px;
+    flex-grow: 1;
+    transition-duration: 0.6s;
+}
+
+.flip-card-inner {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-duration: 1.0s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+
+/* image-box has the same size as flip-card-inner */
+.image-box{
+    z-index: 2;
+    position: absolute;
+    transform: translateY(180deg);
+}
+
+.image-box, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* set the image properties */ 
+img {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* create animation when hovering over the images */
+.flip-card:hover {
+    flex-basis: 66.77%;
+}
+
+
+.flip-card:active .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+.background-wrap {
+    background-position: center;
+    margin: 0 auto;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+/* the following shows the implementations of birthday card of each picture in the main page */
+
+.flip-card-back {
+    position: absolute;
+    height: 20%;
+    width: 25%;
+    /* top: 20%;
+    left: 20%;  */
+    padding: 10px;
+    background-color: rgb(145, 143, 143);
+    border-radius: 10px;
+    border-style: solid;
+    transform: rotateY(180deg);
+    /* font-family: 'Indie Flower', cursive; */
+    /* font-weight: bold; */
+    font-size: 20px; 
+    text-align: left;
+}
+
+p {
+  margin: 20px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 25px; 
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="index.html">Home</a>
+  <a href="#login">Log In</a>
+  <a href="#signUp">Sign Up</a>
+  <!-- <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="pet_care.html">Pet Care</a>
+  <a href="pet_products.html">Pet Products</a> -->
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="A quick search to start..." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+
+<div class = "gallery">
+  <div class = "flip-card">
+      <div class = "flip-card-inner">
+          <div class = "image-box">
+              <img src = "pet9.jpeg">
+          </div> 
+          <div class = "flip-card-back">
+              <p class="title">Pup's looking at you, kid: Puppies can understand human cues from very young age</p>
+              <p>While dogs can eventually learn to listen to their owners, some pups seem to be born with an innate ability to understand humans, research published Thursday in the journal Current Biology suggests.
+                At just 8 weeks old, some of the puppies in the study showed a startling willingness to lock eyes with humans they didn't know and to take command cues, such as directions pointed out with a finger.
+                "From a young age dogs are displaying humanlike social skills," said the lead study author, Emily Bray, a postdoctoral researcher the Canine Cognition Center at the University of Arizona in Tucson and a researcher at Canine Companions in Santa Rosa, California. 
+                "Puppies, even before they have a lot of experience with people, can reciprocate [the] human gaze and can use information from humans in a social context, like pointing as a cue to find hidden food."</p>
+              <p>
+                To determine whether the tendency to interact with humans was innate, Bray and her colleagues ran several experiments with 375 8-week-old puppies who had little previous one-on-one experience with humans. 
+                The puppies were all Labrador retrievers, golden retrievers or a mix of the two breeds. 
+                All of the puppies in the study were bred to be service dogs.
+                The researchers placed a 4-foot-by-6-foot mat on the floor. At one end of the mat, a handler sat holding a puppy. At the other end sat a researcher, with two upside-down cups in front of her. One of the cups covered a treat.
+              </p>
+          </div>
+      </div>
+  </div>
+  
+  
+<div class = "flip-card">
+  <div class = "flip-card-inner">
+      <div class = "image-box">
+          <img src = "pet10.jpeg">
+      </div> 
+      <div class = "flip-card-back">
+        <p class="title">Pup's looking at you, kid: Puppies can understand human cues from very young age</p>
+        <p>While dogs can eventually learn to listen to their owners, some pups seem to be born with an innate ability to understand humans, research published Thursday in the journal Current Biology suggests.
+          At just 8 weeks old, some of the puppies in the study showed a startling willingness to lock eyes with humans they didn't know and to take command cues, such as directions pointed out with a finger.
+          "From a young age dogs are displaying humanlike social skills," said the lead study author, Emily Bray, a postdoctoral researcher the Canine Cognition Center at the University of Arizona in Tucson and a researcher at Canine Companions in Santa Rosa, California. 
+          "Puppies, even before they have a lot of experience with people, can reciprocate [the] human gaze and can use information from humans in a social context, like pointing as a cue to find hidden food."</p>
+        <p>
+          To determine whether the tendency to interact with humans was innate, Bray and her colleagues ran several experiments with 375 8-week-old puppies who had little previous one-on-one experience with humans. 
+          The puppies were all Labrador retrievers, golden retrievers or a mix of the two breeds. 
+          All of the puppies in the study were bred to be service dogs.
+          The researchers placed a 4-foot-by-6-foot mat on the floor. At one end of the mat, a handler sat holding a puppy. At the other end sat a researcher, with two upside-down cups in front of her. One of the cups covered a treat.
+        </p>
+      </div>
+  </div>
+</div>
+  
+
+<div class = "flip-card">
+  <div class = "flip-card-inner">
+      <div class = "image-box">
+          <img src = "pet11.jpeg">
+      </div> 
+      <div class = "flip-card-back">
+        <p class="title">Pup's looking at you, kid: Puppies can understand human cues from very young age</p>
+        <p>While dogs can eventually learn to listen to their owners, some pups seem to be born with an innate ability to understand humans, research published Thursday in the journal Current Biology suggests.
+          At just 8 weeks old, some of the puppies in the study showed a startling willingness to lock eyes with humans they didn't know and to take command cues, such as directions pointed out with a finger.
+          "From a young age dogs are displaying humanlike social skills," said the lead study author, Emily Bray, a postdoctoral researcher the Canine Cognition Center at the University of Arizona in Tucson and a researcher at Canine Companions in Santa Rosa, California. 
+          "Puppies, even before they have a lot of experience with people, can reciprocate [the] human gaze and can use information from humans in a social context, like pointing as a cue to find hidden food."</p>
+        <p>
+          To determine whether the tendency to interact with humans was innate, Bray and her colleagues ran several experiments with 375 8-week-old puppies who had little previous one-on-one experience with humans. 
+          The puppies were all Labrador retrievers, golden retrievers or a mix of the two breeds. 
+          All of the puppies in the study were bred to be service dogs.
+          The researchers placed a 4-foot-by-6-foot mat on the floor. At one end of the mat, a handler sat holding a puppy. At the other end sat a researcher, with two upside-down cups in front of her. One of the cups covered a treat.
+        </p>
+      </div>
+  </div>
+</div>
+      
+  
+
+<div class = "flip-card">
+  <div class = "flip-card-inner">
+      <div class = "image-box">
+          <img src = "pet12.jpeg">
+      </div> 
+      <div class = "flip-card-back">
+        <p class="title">Pup's looking at you, kid: Puppies can understand human cues from very young age</p>
+        <p>While dogs can eventually learn to listen to their owners, some pups seem to be born with an innate ability to understand humans, research published Thursday in the journal Current Biology suggests.
+          At just 8 weeks old, some of the puppies in the study showed a startling willingness to lock eyes with humans they didn't know and to take command cues, such as directions pointed out with a finger.
+          "From a young age dogs are displaying humanlike social skills," said the lead study author, Emily Bray, a postdoctoral researcher the Canine Cognition Center at the University of Arizona in Tucson and a researcher at Canine Companions in Santa Rosa, California. 
+          "Puppies, even before they have a lot of experience with people, can reciprocate [the] human gaze and can use information from humans in a social context, like pointing as a cue to find hidden food."</p>
+        <p>
+          To determine whether the tendency to interact with humans was innate, Bray and her colleagues ran several experiments with 375 8-week-old puppies who had little previous one-on-one experience with humans. 
+          The puppies were all Labrador retrievers, golden retrievers or a mix of the two breeds. 
+          All of the puppies in the study were bred to be service dogs.
+          The researchers placed a 4-foot-by-6-foot mat on the floor. At one end of the mat, a handler sat holding a puppy. At the other end sat a researcher, with two upside-down cups in front of her. One of the cups covered a treat.
+        </p>
+      </div>
+  </div>
+</div>
+
+
+<div class = "flip-card">
+  <div class = "flip-card-inner">
+      <div class = "image-box">
+          <img src = "pet13.jpeg">
+      </div> 
+      <div class = "flip-card-back">
+        <p class="title">Pup's looking at you, kid: Puppies can understand human cues from very young age</p>
+        <p>While dogs can eventually learn to listen to their owners, some pups seem to be born with an innate ability to understand humans, research published Thursday in the journal Current Biology suggests.
+          At just 8 weeks old, some of the puppies in the study showed a startling willingness to lock eyes with humans they didn't know and to take command cues, such as directions pointed out with a finger.
+          "From a young age dogs are displaying humanlike social skills," said the lead study author, Emily Bray, a postdoctoral researcher the Canine Cognition Center at the University of Arizona in Tucson and a researcher at Canine Companions in Santa Rosa, California. 
+          "Puppies, even before they have a lot of experience with people, can reciprocate [the] human gaze and can use information from humans in a social context, like pointing as a cue to find hidden food."</p>
+        <p>
+          To determine whether the tendency to interact with humans was innate, Bray and her colleagues ran several experiments with 375 8-week-old puppies who had little previous one-on-one experience with humans. 
+          The puppies were all Labrador retrievers, golden retrievers or a mix of the two breeds. 
+          All of the puppies in the study were bred to be service dogs.
+          The researchers placed a 4-foot-by-6-foot mat on the floor. At one end of the mat, a handler sat holding a puppy. At the other end sat a researcher, with two upside-down cups in front of her. One of the cups covered a treat.
+        </p>
+      </div>
+  </div>
+</div>          
+
+<div class = "flip-card">
+  <div class = "flip-card-inner">
+      <div class = "image-box">
+          <img src = "pet14.jpeg">
+      </div> 
+      <div class = "flip-card-back">
+        <p class="title">Pup's looking at you, kid: Puppies can understand human cues from very young age</p>
+        <p>While dogs can eventually learn to listen to their owners, some pups seem to be born with an innate ability to understand humans, research published Thursday in the journal Current Biology suggests.
+          At just 8 weeks old, some of the puppies in the study showed a startling willingness to lock eyes with humans they didn't know and to take command cues, such as directions pointed out with a finger.
+          "From a young age dogs are displaying humanlike social skills," said the lead study author, Emily Bray, a postdoctoral researcher the Canine Cognition Center at the University of Arizona in Tucson and a researcher at Canine Companions in Santa Rosa, California. 
+          "Puppies, even before they have a lot of experience with people, can reciprocate [the] human gaze and can use information from humans in a social context, like pointing as a cue to find hidden food."</p>
+        <p>
+          To determine whether the tendency to interact with humans was innate, Bray and her colleagues ran several experiments with 375 8-week-old puppies who had little previous one-on-one experience with humans. 
+          The puppies were all Labrador retrievers, golden retrievers or a mix of the two breeds. 
+          All of the puppies in the study were bred to be service dogs.
+          The researchers placed a 4-foot-by-6-foot mat on the floor. At one end of the mat, a handler sat holding a puppy. At the other end sat a researcher, with two upside-down cups in front of her. One of the cups covered a treat.
+        </p>
+      </div>
+  </div>
+</div>   
+</div>   
+
+</body>
+</html>
